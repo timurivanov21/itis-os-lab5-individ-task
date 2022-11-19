@@ -55,7 +55,7 @@ void find_in_directory(char *directory, char *search_name)
 void print_info(char *path)
 {
     struct stat buf = { 0 };
-    char acesss_rights[9];
+    char access_rights[9];
     int i;
     stat(path, &buf);
     struct tm * timeinfo;
@@ -67,11 +67,11 @@ void print_info(char *path)
 
     for (i = 0; i < 9; i += 3)
     {
-        acesss_rights[8 - i] = buf.st_mode & (0x1 << i) ? 'x' : '-';
-        acesss_rights[8 - (i + 1)] = buf.st_mode & (0x1 << (i + 1)) ?  'w' : '-';
-        acesss_rights[8 - (i + 2)] = buf.st_mode & (0x1 << (i + 2)) ?  'r' : '-';
+        access_rights[8 - i] = buf.st_mode & (0x1 << i) ? 'x' : '-';
+        access_rights[8 - (i + 1)] = buf.st_mode & (0x1 << (i + 1)) ?  'w' : '-';
+        access_rights[8 - (i + 2)] = buf.st_mode & (0x1 << (i + 2)) ?  'r' : '-';
     }
-    printf("Acess rights: %s\n", acesss_rights);
+    printf("Acess rights: %s\n", access_rights);
 
     printf("Inode: %ld\n\n", buf.st_ino);
 
