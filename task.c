@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     if (argc == 3)
     {
         find_in_directory(argv[1], argv[2]);
-        printf("Viewed directories: %d\nViewed files: %d\n", num_of_directories, num_of_files);
+        printf("Viewed directories: %d\nViewed files: %d\n", num_of_directories+1, num_of_files);
     }
     else
     {
